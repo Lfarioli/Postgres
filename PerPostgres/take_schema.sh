@@ -5,11 +5,18 @@ P=0
 
 for DB in $DATABASE_LIST; do
 
-echo $DB 
+echo " Database  $DB" 
 
-	SCHEMA=$(psql -t $DB -c "SELECT schema_name FROM information_schema.schemata;")
+SCHEMA=$(psql -t $DB -c "SELECT schema_name FROM information_schema.schemata;")
 
-echo $SCHEMA
+
+		for SH in $SCHEMA; do
+
+		SIZE=$(psql -t -c "SELECT SUM(pg_total_relation_size(quote_ident(schemaname) || '.' || quote_ident(tablename)))::BIGINT FROM pg_tables WHERE schemaname = '$SH';")	
+
+		echo "$SH -- $SIZE"
+
+		done	
 
 
 done
