@@ -2,7 +2,8 @@
 
 DATABASE_LIST=$(psql -tl | grep -v "^  " |awk '{print $1}' |grep -v "^$" | egrep -vw "template0|template1" )
 
-echo "Database Schema Size NTable"	> report.txt	
+echo "Database Schema Size NTable"	> report.txt
+	
 
 for DB in $DATABASE_LIST; do
 
