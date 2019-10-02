@@ -2,13 +2,14 @@
 
 DATABASE_LIST=$(psql -tl | grep -v "^  " |awk '{print $1}' |grep -v "^$" | egrep -vw "template0|template1" )
 
+echo "Database Schema Size NTable"	> report.txt	
 
 for DB in $DATABASE_LIST; do
 
 
 	SCHEMA=$(psql -t $DB -c "SELECT schema_name FROM information_schema.schemata;")
 
-	echo " Database  $DB" 			
+	echo " Database  $DB" 	
 
 		
 		for SH in $SCHEMA; do
@@ -21,7 +22,8 @@ for DB in $DATABASE_LIST; do
 
 			NUMTABLE=$(psql -t $DB -c "select count(*) from information_schema.tables where table_schema ='$SH';")
 
-			echo " schema: $SH size: $SIZE table: $NUMTABLE "
+			echo "$DB $SH $SIZE $NUMTABLE " >> report.txt
+
 
 
 			fi
@@ -31,3 +33,5 @@ for DB in $DATABASE_LIST; do
 
 done
 
+
+awk '{printf "%-30s|%-18s|%-20s|%-20s\n",$1,$2,$3,$4}' report.txt > final_report.txt
