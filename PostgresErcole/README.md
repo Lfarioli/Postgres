@@ -62,7 +62,8 @@ character_set        | it_IT.UTF-8
 ## Version and minor Release
 
 Through this SQL (check_version.sql) script developed in PLPGSQL language we can compare the version of the instance with its release date on the market.
-**N.B** The script supports up to version 8.4 of postgreSQL
+
+**N.B** The script supports up to version 9.0 of postgreSQL
 
 ## Check schemas and relative parameters
 
