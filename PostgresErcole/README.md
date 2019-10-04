@@ -1,7 +1,8 @@
 # Postgres
  
 ## Requirements
-The user postgres must be trusted from localhost in the file pg_hba.conf
+- The user postgres must be trusted from localhost in the file pg_hba.conf
+- The scripts must be run with the OS user postgres
 
 ## Memory parameters
 
