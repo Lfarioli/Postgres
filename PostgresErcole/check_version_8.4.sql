@@ -1,8 +1,5 @@
 
 
-
-####remeber psql -c "create language plpgsql;"
-
 CREATE OR REPLACE FUNCTION pg_temp.get_release()
 RETURNS VARCHAR(500) AS $$
 
@@ -72,6 +69,10 @@ BEGIN
 
 
 
+
+
 RETURN date;
 END; $$
 LANGUAGE plpgsql;
+
+select pg_temp.get_release();

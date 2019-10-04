@@ -1,5 +1,8 @@
 # Postgres
  
+## Requirements
+The user postgres must be trusted from localhost in the file pg_hba.conf
+
 ## Memory parameters
 
 Use the get_param.sql query to get all the current database memory parameters.
