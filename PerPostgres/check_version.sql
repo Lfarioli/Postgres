@@ -428,4 +428,7 @@ END CASE;
 RAISE NOTICE '%', date;
 
 END first_block $$;
-s
+
+
+#for execute
+# psql -At < check_version.sql |grep NOT
