@@ -4,8 +4,8 @@ DO $$
 <<first_block>>
 
 DECLARE 
-   ver   VARCHAR(500);s
-   ver2   VARCHAR(500);
+   ver   VARCHAR(500);
+   ver2  VARCHAR(500);
    date  VARCHAR(50);
 
 BEGIN

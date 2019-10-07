@@ -5,7 +5,7 @@ RETURNS VARCHAR(500) AS $$
 
 DECLARE 
    ver   VARCHAR(500);
-   ver2   VARCHAR(500);
+   ver2  VARCHAR(500);
    date  VARCHAR(50);
 
 BEGIN
