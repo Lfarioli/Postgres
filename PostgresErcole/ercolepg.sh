@@ -36,21 +36,13 @@ get_version () {
 
 memory_parameter () {
 	
-	if [ "$VERSION" == "8" ]; then
-		
-		
-
-
-		echo "$VERSION8" >> $OUTPUTFILE
-
-
-	else 
+	
 
 	MEMP1=$(psql  </tmp/get_param.sql) 
 
 	echo "$MEMP" >> $OUTPUTFILE
 
-	fi
+
 }
 
 
