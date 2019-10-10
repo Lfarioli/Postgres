@@ -13,6 +13,7 @@ BEGIN
   
     SELECT INTO ver version ();
     SELECT into ver2 substring ("ver" from 11 for 7);
+    
 
 
       CASE ver2            
